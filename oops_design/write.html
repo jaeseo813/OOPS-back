@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <title>통학 게시판 글쓰기</title>
+    <link rel="stylesheet" href="css/globals.css" />
+    <link rel="stylesheet" href="css/write-style.css" />
+  </head>
+  <body>
+    <main class="write">
+      <header class="frame">
+        <div class="div">
+          <a class="element-wrapper" href="#" aria-label="Loops 홈으로 이동">
+            <img class="element" src="img/oops.png" alt="Loops 로고" />
+          </a>
+          <nav class="frame-2" aria-label="주요 메뉴">
+            <a class="div-wrapper" href="#" aria-current="page">
+              <span class="text-wrapper">게시판</span>
+            </a>
+            <a class="frame-3" href="#">
+              <span class="text-wrapper-2">학교 홈페이지</span>
+            </a>
+            <a class="view" href="#" aria-label="로그인 또는 회원가입">
+              <img
+                class="image-removebg"
+                src="img/men.png"
+                alt=""
+                aria-hidden="true"
+              />
+              <span class="text-wrapper-3">로그인 / 회원가입</span>
+            </a>
+          </nav>
+        </div>
+        <div class="frame-4">
+          <section class="frame-5" aria-labelledby="board-title">
+            <h1 class="text-wrapper-4" id="board-title">통학 게시판</h1>
+          </section>
+          <button
+            class="frame-6"
+            type="button"
+            aria-pressed="false"
+            aria-label="통학 게시판 구독"
+          >
+            <span class="text-wrapper-5">구독</span>
+            <img class="star" src="img/star-1.png" alt="" aria-hidden="true" />
+          </button>
+        </div>
+      </header>
+      <section class="frame-7" aria-labelledby="write-form-title">
+        <h2 id="write-form-title" class="sr-only">게시글 작성 폼</h2>
+        <form class="write-form" action="#" method="post">
+          <div class="frame-8">
+            <label class="frame-9" for="post-title">
+              <span class="text-wrapper-6">글 제목</span>
+              <input
+                id="post-title"
+                name="title"
+                class="title-input"
+                type="text"
+                aria-label="글 제목"
+              />
+            </label>
+            <div class="frame-10">
+              <label class="frame-11" for="is-anonymous">
+                <input
+                  id="is-anonymous"
+                  name="anonymous"
+                  class="anonymous-input"
+                  type="checkbox"
+                />
+                <span class="text-wrapper-7">익명</span>
+              </label>
+              <label class="frame-11" for="file-upload">
+                <img
+                  class="file"
+                  src="img/file.png"
+                  alt=""
+                  aria-hidden="true"
+                />
+                <span class="text-wrapper-7">추가</span>
+                <input
+                  id="file-upload"
+                  name="attachment"
+                  class="file-input"
+                  type="file"
+                />
+              </label>
+            </div>
+          </div>
+          <label class="frame-12" for="post-content">
+            <span class="sr-only">게시글 내용</span>
+            <textarea
+              id="post-content"
+              name="content"
+              class="content-input"
+              placeholder="입력해주세요.."
+              aria-label="게시글 내용"
+            ></textarea>
+          </label>
+          <button class="select" type="submit">
+            <span class="text-wrapper-9">등록하기</span>
+          </button>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

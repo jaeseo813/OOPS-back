@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <title>검색 결과 없음</title>
+    <link rel="stylesheet" href="css/globals.css" />
+    <link rel="stylesheet" href="css/search-fail-style.css" />
+  </head>
+  <body>
+    <main class="search-fail">
+      <header class="frame">
+        <div class="div">
+          <a class="element-wrapper" href="#" aria-label="COOPS 홈으로 이동">
+            <img class="element" src="img/oops.png" alt="COOPS 로고" />
+          </a>
+          <nav class="frame-2" aria-label="주요 메뉴">
+            <a class="div-wrapper" href="#" aria-label="게시판">
+              <span class="text-wrapper">게시판</span>
+            </a>
+            <a class="frame-3" href="#" aria-label="학교 홈페이지">
+              <span class="text-wrapper-2">학교 홈페이지</span>
+            </a>
+            <a class="view" href="#" aria-label="로그인 또는 회원가입">
+              <img
+                class="image-removebg"
+                src="img/men.png"
+                alt=""
+                aria-hidden="true"
+              />
+              <span class="text-wrapper-3">로그인 / 회원가입</span>
+            </a>
+          </nav>
+        </div>
+      </header>
+      <section class="frame-wrapper" aria-label="검색">
+        <form class="frame-4" action="#" method="get" role="search">
+          <label class="sr-only" for="search-keyword">검색어</label>
+          <img
+            class="free-icon-magnifier"
+            src="img/search.png"
+            alt=""
+            aria-hidden="true"
+          />
+          <input
+            class="text-wrapper-4 search-input"
+            id="search-keyword"
+            name="q"
+            type="search"
+            value="침대"
+            placeholder="검색어를 입력하세요"
+            aria-label="검색어 입력"
+          />
+        </form>
+      </section>
+      <section class="frame-5" aria-labelledby="search-result-heading">
+        <div class="frame-6">
+          <h1 class="p" id="search-result-heading">
+            <span class="span">‘침대’ </span
+            ><span class="text-wrapper-5">검색결과</span>
+          </h1>
+        </div>
+      </section>
+      <section class="navbar-wrapper" aria-label="정렬 옵션">
+        <nav class="navbar" aria-label="검색 결과 정렬">
+          <button
+            class="text-wrapper-6 sort-button"
+            type="button"
+            aria-pressed="true"
+          >
+            최신순
+          </button>
+          <button
+            class="text-wrapper-6 sort-button"
+            type="button"
+            aria-pressed="false"
+          >
+            오래된순
+          </button>
+          <button
+            class="text-wrapper-6 sort-button"
+            type="button"
+            aria-pressed="false"
+          >
+            조회순
+          </button>
+          <button
+            class="text-wrapper-6 sort-button"
+            type="button"
+            aria-pressed="false"
+          >
+            추천 순
+          </button>
+        </nav>
+      </section>
+      <section class="frame-7" aria-live="polite" aria-label="검색 결과 상태">
+        <div class="frame-8">
+          <p class="text-wrapper-7">텅..</p>
+          <p class="text-wrapper-8">
+            검색 결과가 없습니다. <br />다른 검색어를 입력해보세요.
+          </p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

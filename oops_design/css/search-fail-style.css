@@ -1,0 +1,463 @@
+.search-fail {
+  display: flex;
+  flex-direction: column;
+  height: 1080px;
+  align-items: center;
+  gap: 30px;
+  padding: 40px 29px 70px 33px;
+  position: relative;
+  background-color: #f0f4f7;
+}
+
+.search-fail .frame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.search-fail .div {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 900px;
+  align-items: center;
+  justify-content: center;
+  gap: 20px 20px;
+  padding: 14px 0px;
+  position: relative;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.search-fail .element-wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 190px;
+  width: 190px;
+  align-items: flex-start;
+  gap: 10px;
+  position: relative;
+}
+
+.search-fail .element {
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  aspect-ratio: 2.34;
+  object-fit: cover;
+}
+
+.search-fail .frame-2 {
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 140px;
+  align-items: center;
+  justify-content: center;
+  gap: 20px 20px;
+  position: relative;
+  flex: 1;
+  flex-grow: 1;
+}
+
+.search-fail .div-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 44px;
+  position: relative;
+  flex: 0 0 auto;
+  background-color: #002843;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.search-fail .text-wrapper {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: 'Iosevka Charon-Bold', Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 15px;
+  line-height: 22.5px;
+  white-space: nowrap;
+  position: relative;
+  letter-spacing: 0;
+}
+
+.search-fail .frame-3 {
+  display: flex;
+  width: 130px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 44px;
+  position: relative;
+  background-color: #002843;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.search-fail .text-wrapper-2 {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  margin-top: -1px;
+  margin-left: -23px;
+  margin-right: -23px;
+  font-family: 'Iosevka Charon-Bold', Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 15px;
+  line-height: 22.5px;
+  white-space: nowrap;
+  position: relative;
+  letter-spacing: 0;
+}
+
+.search-fail .view {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2.5px 2.5px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.search-fail .image-removebg {
+  position: relative;
+  width: 22.14px;
+  height: 19.53px;
+  aspect-ratio: 1.13;
+  object-fit: cover;
+}
+
+.search-fail .text-wrapper-3 {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  margin-top: -0.5px;
+  font-family: 'Iosevka Charon-Bold', Helvetica;
+  font-weight: 700;
+  color: #002843;
+  font-size: 15px;
+  line-height: 22.5px;
+  white-space: nowrap;
+  position: relative;
+  letter-spacing: 0;
+}
+
+.search-fail .frame-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 650px;
+  align-items: center;
+  gap: 5px 5px;
+  padding: 11px 50px 11px 30px;
+  position: relative;
+  width: 100%;
+  flex: 0 0 auto;
+  background-color: #ffffff;
+  border-radius: 10px;
+  border: 2px solid;
+  border-color: #002843;
+}
+
+.search-fail .frame-4 {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.search-fail .free-icon-magnifier {
+  position: relative;
+  width: 27px;
+  height: 27px;
+  object-fit: cover;
+}
+
+.search-fail .text-wrapper-4 {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: 'Inter-Black', Helvetica;
+  font-weight: 900;
+  color: #002843;
+  font-size: 18px;
+  line-height: 27px;
+  white-space: nowrap;
+  position: relative;
+  letter-spacing: 0;
+}
+
+.search-fail .frame-5 {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 650px;
+  align-items: flex-end;
+  gap: 0px 0px;
+  position: relative;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.search-fail .frame-6 {
+  display: flex;
+  max-width: 700px;
+  height: 55px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 0px;
+  position: relative;
+  flex: 1;
+  flex-grow: 1;
+  background-color: #002843;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.search-fail .p {
+  display: -webkit-box;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  margin-top: -6px;
+  margin-bottom: -4px;
+  font-family: 'Iosevka Charon-Bold', Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 30px;
+  text-align: center;
+  line-height: 45px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  position: relative;
+  letter-spacing: 0;
+}
+
+.search-fail .span {
+  font-family: 'Iosevka Charon-Bold', Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 30px;
+  letter-spacing: 0;
+  line-height: 45px;
+}
+
+.search-fail .text-wrapper-5 {
+  font-size: 25px;
+  line-height: 37.5px;
+}
+
+.search-fail .navbar-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 700px;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 11px 50px;
+  position: relative;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.search-fail .navbar {
+  display: inline-flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.search-fail .text-wrapper-6 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: 'Iosevka Charon-Bold', Helvetica;
+  font-weight: 700;
+  color: #002843;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: 30px;
+  white-space: nowrap;
+}
+
+.search-fail .frame-7 {
+  display: flex;
+  flex-direction: column;
+  min-width: 350px;
+  max-width: 1000px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 36px 36px 103px;
+  position: relative;
+  width: 100%;
+  flex: 0 0 auto;
+  background-color: #d9e4ec;
+  border-radius: 20px;
+  box-shadow: 0px 10px 4px #0000001a;
+}
+
+.search-fail .frame-8 {
+  display: flex;
+  flex-direction: column;
+  width: 359px;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.search-fail .text-wrapper-7 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  margin-top: -1px;
+  font-family: 'Iosevka Charon-Bold', Helvetica;
+  font-weight: 700;
+  color: #002843;
+  font-size: 70px;
+  text-align: center;
+  line-height: 105px;
+  position: relative;
+  letter-spacing: 0;
+}
+
+.search-fail .text-wrapper-8 {
+  align-self: stretch;
+  font-family: 'Iosevka Charon-Bold', Helvetica;
+  font-weight: 700;
+  color: #002843;
+  font-size: 30px;
+  text-align: center;
+  line-height: 45px;
+  position: relative;
+  letter-spacing: 0;
+}
+/* Original CSS code should be injected above this comment. */
+
+.search-fail {
+  min-height: 1080px;
+  height: auto;
+}
+
+.search-fail .element-wrapper,
+.search-fail .div-wrapper,
+.search-fail .frame-3,
+.search-fail .view {
+  text-decoration: none;
+}
+
+.search-fail .frame-4 {
+  width: 100%;
+  min-width: 0;
+}
+
+.search-fail .search-input {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  flex: 1 1 auto;
+}
+
+.search-fail .search-input::placeholder {
+  color: #002843;
+  opacity: 1;
+}
+
+.search-fail .search-input::-webkit-search-decoration,
+.search-fail .search-input::-webkit-search-cancel-button,
+.search-fail .search-input::-webkit-search-results-button,
+.search-fail .search-input::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+}
+
+.search-fail .sort-button {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.search-fail .sort-button:focus-visible,
+.search-fail .search-input:focus-visible,
+.search-fail .element-wrapper:focus-visible,
+.search-fail .div-wrapper:focus-visible,
+.search-fail .frame-3:focus-visible,
+.search-fail .view:focus-visible {
+  outline: 2px solid #002843;
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+.search-fail .frame-8 {
+  width: 100%;
+  max-width: 359px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 767px) {
+  .search-fail {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .search-fail .frame-wrapper {
+    padding-right: 30px;
+  }
+
+  .search-fail .p,
+  .search-fail .span {
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  .search-fail .text-wrapper-5 {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .search-fail .text-wrapper-7 {
+    font-size: 56px;
+    line-height: 84px;
+  }
+
+  .search-fail .text-wrapper-8 {
+    font-size: 24px;
+    line-height: 36px;
+  }
+}

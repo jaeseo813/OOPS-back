@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <title>COOPS 게시판</title>
+    <link rel="stylesheet" href="css/globals.css" />
+    <link rel="stylesheet" href="css/main-style.css" />
+  </head>
+  <body>
+    <main class="screen">
+      <header class="frame">
+        <div class="div">
+          <h1 class="element-wrapper">
+            <img class="element" src="img/oops.png" alt="COOPS 로고" />
+          </h1>
+          <nav class="frame-2" aria-label="주요 메뉴">
+            <a href="#" class="div-wrapper" aria-current="page">
+              <span class="text-wrapper">게시판</span>
+            </a>
+            <a href="#" class="frame-3">
+              <span class="text-wrapper-2">학교 홈페이지</span>
+            </a>
+            <a href="#" class="view" aria-label="로그인 또는 회원가입">
+              <img
+                class="image-removebg"
+                src="img/men.png"
+                alt=""
+                aria-hidden="true"
+              />
+              <span class="text-wrapper-3">로그인 / 회원가입</span>
+            </a>
+          </nav>
+        </div>
+        <form
+          class="frame-wrapper"
+          action="#"
+          method="get"
+          role="search"
+          aria-label="게시판 검색"
+        >
+          <label class="frame-4" for="board-search">
+            <img
+              class="free-icon-magnifier"
+              src="img/search.png"
+              alt=""
+              aria-hidden="true"
+            />
+            <input
+              class="text-wrapper-4"
+              id="board-search"
+              name="q"
+              type="search"
+              placeholder="검색어를 입력해주세요."
+              aria-label="검색어를 입력해주세요."
+            />
+          </label>
+        </form>
+      </header>
+      <section class="frame-5" aria-label="게시판 요약">
+        <section class="frame-6" aria-label="인기 및 일반 게시판">
+          <div class="div-2">
+            <section aria-labelledby="popular-board-heading">
+              <div class="frame-7">
+                <span class="text-wrapper-5" aria-hidden="true">🔥</span>
+                <h2 class="text-wrapper-6" id="popular-board-heading">
+                  인기 게시글
+                </h2>
+              </div>
+              <ul>
+                <li class="text-wrapper-7">오픈소스 수업 관련... [1]</li>
+                <li class="text-wrapper-7">이중전공 어쩌구 저쩌구...</li>
+                <li class="text-wrapper-7">외대 근처 맛집 관련... [12]</li>
+                <li class="text-wrapper-7">오픈소스 수업 관련... [1]</li>
+                <li class="text-wrapper-7">이중전공 어쩌구 저쩌구...</li>
+                <li class="text-wrapper-7">외대 근처 맛집 관련... [12]</li>
+                <li class="text-wrapper-7">오픈소스 수업 관련... [1]</li>
+                <li class="text-wrapper-7">이중전공 어쩌구 저쩌구...</li>
+                <li class="text-wrapper-7">외대 근처 맛집 관련... [12]</li>
+              </ul>
+            </section>
+          </div>
+          <div class="div-2">
+            <section class="OO" aria-labelledby="free-board-heading">
+              <div class="frame-8">
+                <h2 class="text-wrapper-6" id="free-board-heading">
+                  자유 게시판
+                </h2>
+              </div>
+              <ul>
+                <li class="text-wrapper-8">오픈소스 수업 관련... [1]</li>
+                <li class="text-wrapper-8">이중전공 어쩌구 저쩌구...</li>
+                <li class="text-wrapper-8">외대 근처 맛집 관련... [12]</li>
+              </ul>
+            </section>
+            <section class="OO" aria-labelledby="cat-board-heading">
+              <div class="frame-9">
+                <h2 class="text-wrapper-6" id="cat-board-heading">
+                  고양이 게시판
+                </h2>
+              </div>
+              <ul>
+                <li class="text-wrapper-8">오픈소스 수업 관련... [1]</li>
+                <li class="text-wrapper-8">이중전공 어쩌구 저쩌구...</li>
+                <li class="text-wrapper-8">외대 근처 맛집 관련... [12]</li>
+              </ul>
+            </section>
+          </div>
+        </section>
+        <aside class="view-2" aria-labelledby="subscribed-board-heading">
+          <div class="frame-8">
+            <h2 class="text-wrapper-6" id="subscribed-board-heading">
+              구독 게시판
+            </h2>
+            <img class="star" src="img/star-1.png" alt="" aria-hidden="true" />
+          </div>
+          <ul>
+            <li class="text-wrapper-9">● 통학 게시판</li>
+            <li class="text-wrapper-10">● 외대 근처 맛집 게시판</li>
+            <li class="text-wrapper-11">● 컴퓨터공학과 게시판</li>
+            <li class="text-wrapper-9">● 학식 게시판</li>
+            <li class="text-wrapper-10">● 이중 전공 게시판</li>
+            <li class="text-wrapper-11">● 분실물 게시판</li>
+            <li class="text-wrapper-9">● 동아리 게시판</li>
+            <li class="text-wrapper-10">● 고양이 게시판</li>
+          </ul>
+        </aside>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,208 @@
+.find-pw {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 36px 129px;
+  position: relative;
+  background-color: #f0f4f7;
+}
+
+.find-pw .name {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px 16.48px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.find-pw .element {
+  position: relative;
+  width: 152.06px;
+  height: 64.87px;
+  aspect-ratio: 2.34;
+  object-fit: cover;
+}
+
+.find-pw .text-wrapper {
+  width: fit-content;
+  font-family: 'Inter-Black', Helvetica;
+  font-weight: 900;
+  color: #002843;
+  font-size: 38.3px;
+  line-height: 57.4px;
+  white-space: nowrap;
+  position: relative;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0;
+}
+
+.find-pw .div {
+  justify-content: center;
+  align-self: stretch;
+  font-family: 'Iosevka Charon-Bold', Helvetica;
+  font-weight: 700;
+  color: #002843;
+  font-size: 15px;
+  text-align: center;
+  line-height: 22.5px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0;
+}
+
+.find-pw .id {
+  display: flex;
+  flex-direction: column;
+  min-width: 282px;
+  max-width: 330px;
+  height: 35px;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 5.32px;
+  padding: 0px 17px;
+  position: relative;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 10px;
+  border: 1.06px solid;
+  border-color: #002843;
+}
+
+.find-pw .text-wrapper-2 {
+  align-self: stretch;
+  font-family: 'Inter-Black', Helvetica;
+  font-weight: 900;
+  color: #00284399;
+  font-size: 19.1px;
+  line-height: 28.7px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0;
+}
+
+.find-pw .select {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 5.32px 5.32px;
+  padding: 11.17px 43.6px 11.17px 44.13px;
+  position: relative;
+  flex: 0 0 auto;
+  background-color: #002843;
+  border-radius: 26.58px;
+  box-shadow: 0px 5.32px 2.13px #00000040;
+}
+
+.find-pw .text-wrapper-3 {
+  width: fit-content;
+  margin-top: -0.53px;
+  font-family: 'Inter-Black', Helvetica;
+  font-weight: 900;
+  color: #f0f4f7;
+  font-size: 19.1px;
+  line-height: 28.7px;
+  white-space: nowrap;
+  position: relative;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0;
+}
+
+/* 2. 안내 문구(span) 스타일 - 기존 폰트 설정 유지 */
+.find-pw .id .placeholder-text {
+  position: absolute;
+  left: 17px;
+  color: #00284399; /* 안내 문구일 때의 색상 */
+  font-family: 'Inter-Black', Helvetica;
+  font-weight: 900;
+  font-size: 19.1px;
+  pointer-events: none;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+/* 3. 실제 입력되는 input 폰트 스타일 - 안내 문구와 동일하게 설정 */
+.find-pw .id input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  position: relative;
+  z-index: 5;
+
+  /* 입력 시 나타날 폰트 설정 */
+  color: #002843; /* 실제 입력되는 글자 색상 */
+  font-family: 'Inter-Black', Helvetica;
+  font-weight: 900;
+  font-size: 19.1px;
+}
+
+/* 4. ★ 핵심: 입력 중이거나 글자가 있으면 안내 문구 숨기기 ★ */
+.find-pw .id:has(input:focus) .placeholder-text,
+.find-pw .id:has(input:not(:placeholder-shown)) .placeholder-text {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* 버튼 상단 여백 추가 (선택사항) */
+.find-pw .select {
+  margin-top: 10px;
+  cursor: pointer;
+}
+/* Original CSS is injected automatically above */
+
+.find-pw {
+  min-height: 100vh;
+  height: auto;
+}
+
+.find-pw form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+}
+
+.find-pw .text-wrapper-2 {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  padding: 0;
+}
+
+.find-pw .text-wrapper-2::placeholder {
+  color: #00284399;
+  opacity: 1;
+}
+
+.find-pw .text-wrapper-2:focus {
+  outline: none;
+}
+
+.find-pw .id:focus-within {
+  border-color: #002843;
+}
+
+.find-pw .select {
+  border: 0;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.find-pw .select:focus-visible {
+  outline: 2px solid #4a90e2;
+  outline-offset: 2px;
+}

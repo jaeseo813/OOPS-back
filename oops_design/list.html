@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <title>게시판</title>
+    <link rel="stylesheet" href="css/globals.css" />
+    <link rel="stylesheet" href="css/list-style.css" />
+  </head>
+  <body>
+    <main class="list">
+      <section class="frame" aria-label="게시판 페이지">
+        <header class="div">
+          <div class="element-wrapper">
+            <img class="element" src="img/oops.png" alt="COOPS 로고" />
+          </div>
+          <nav class="frame-2" aria-label="주요 메뉴">
+            <a class="div-wrapper" href="#" aria-current="page">
+              <span class="text-wrapper">게시판</span>
+            </a>
+            <a class="frame-3" href="#">
+              <span class="text-wrapper-2">학교 홈페이지</span>
+            </a>
+            <a class="view" href="#" aria-label="로그인 또는 회원가입">
+              <img
+                class="image-removebg"
+                src="img/men.png"
+                alt=""
+                aria-hidden="true"
+              />
+              <span class="text-wrapper-3">로그인 / 회원가입</span>
+            </a>
+          </nav>
+        </header>
+        <section class="frame-wrapper" aria-label="게시판 검색">
+          <form class="frame-4" action="#" method="get" role="search">
+            <img
+              class="free-icon-magnifier"
+              src="img/search.png"
+              alt=""
+              aria-hidden="true"
+            />
+            <label class="sr-only" for="board-search">검색어 입력</label>
+            <input
+              class="text-wrapper-4 search-input"
+              id="board-search"
+              name="q"
+              type="search"
+              placeholder="검색어를 입력해주세요."
+              autocomplete="off"
+            />
+          </form>
+        </section>
+        <section class="frame-5" aria-labelledby="board-title">
+          <h1 class="text-wrapper-5" id="board-title">게시판</h1>
+        </section>
+        <section class="frame-6" aria-label="게시판 목록">
+          <ul class="frame-7" aria-label="첫 번째 게시판 그룹">
+            <li class="text-wrapper-6"><a href="#">● 자유 게시판</a></li>
+            <li class="text-wrapper-7"><a href="#">● 이중 전공 게시판</a></li>
+            <li class="text-wrapper-7">
+              <a href="#">● 컴퓨터공학과 게시판</a>
+            </li>
+          </ul>
+          <ul class="frame-7" aria-label="두 번째 게시판 그룹">
+            <li class="text-wrapper-6"><a href="#">● 동아리 게시판</a></li>
+            <li class="text-wrapper-7"><a href="#">● 학식 게시판</a></li>
+            <li class="text-wrapper-7"><a href="#">● 고양이 게시판</a></li>
+          </ul>
+          <ul class="frame-7" aria-label="세 번째 게시판 그룹">
+            <li class="text-wrapper-6">
+              <a href="#">● 외대 근처 맛집 게시판</a>
+            </li>
+            <li class="text-wrapper-7"><a href="#">● 통학 게시판</a></li>
+            <li class="text-wrapper-7"><a href="#">● 분실물 게시판</a></li>
+          </ul>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>

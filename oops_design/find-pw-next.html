@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>비밀번호 변경</title>
+    <link rel="stylesheet" href="css/globals.css" />
+    <link rel="stylesheet" href="css/find-pw-next-style.css" />
+  </head>
+  <body>
+    <main class="find-pw-next">
+      <header class="name">
+        <img class="element" src="img/oops.png" alt="Loops 로고" />
+        <h1 class="text-wrapper">비밀번호 변경</h1>
+      </header>
+      <form action="#" method="post" aria-label="비밀번호 변경 폼">
+        <label class="pw" for="password">
+          <span class="placeholder-text">비밀번호</span>
+          <input
+            class="div"
+            id="password"
+            name="password"
+            type="password"
+            placeholder=" "
+            autocomplete="new-password"
+            aria-label="비밀번호"
+            required
+          />
+        </label>
+        <label class="pw" for="password-confirm">
+          <span class="placeholder-text">비밀번호 확인</span>
+          <input
+            class="div"
+            id="password-confirm"
+            name="password-confirm"
+            type="password"
+            placeholder=" "
+            autocomplete="new-password"
+            aria-label="비밀번호 확인"
+            required
+          />
+        </label>
+        <button class="select" type="submit">
+          <span class="text-wrapper-2">확인</span>
+        </button>
+      </form>
+    </main>
+  </body>
+</html>

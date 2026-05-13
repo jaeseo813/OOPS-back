@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>설정</title>
+    <link rel="stylesheet" href="css/globals.css" />
+    <link rel="stylesheet" href="css/setting-style.css" />
+  </head>
+  <body>
+    <main class="setting">
+      <div class="frame">
+        <header class="div">
+          <div class="element-wrapper">
+            <img class="element" src="img/oops.png" alt="LOOPS 로고" />
+          </div>
+          <nav class="frame-2" aria-label="주요 메뉴">
+            <a href="#" class="div-wrapper" aria-current="page">
+              <span class="text-wrapper">게시판</span>
+            </a>
+            <a href="#" class="frame-3">
+              <span class="text-wrapper-2">학교 홈페이지</span>
+            </a>
+            <a href="#" class="view" aria-label="내 프로필">
+              <span class="frame-4">
+                <img class="image-removebg" src="img/men.png" alt="" />
+                <span class="text-wrapper-3">통학러123</span>
+              </span>
+            </a>
+            <button type="button" class="frame-5" aria-label="로그아웃">
+              <span class="text-wrapper">로그아웃</span>
+            </button>
+          </nav>
+        </header>
+        <section class="frame-wrapper" aria-label="검색">
+          <form class="frame-6" action="#" method="get" role="search">
+            <label for="site-search" class="sr-only">검색어 입력</label>
+            <img class="free-icon-magnifier" src="img/search.png" alt="" />
+            <input
+              class="text-wrapper-4 search-input"
+              id="site-search"
+              name="q"
+              type="search"
+              placeholder="검색어를 입력해주세요."
+              aria-label="검색어를 입력해주세요."
+            />
+          </form>
+        </section>
+        <section class="frame-7" aria-labelledby="page-title">
+          <div class="frame-8">
+            <h1 class="text-wrapper-5" id="page-title">설정</h1>
+          </div>
+        </section>
+        <section class="frame-9" aria-label="설정 정보">
+          <section class="frame-10" aria-labelledby="profile-image-title">
+            <h2 class="text-wrapper-6" id="profile-image-title">
+              프로필 이미지
+            </h2>
+            <div class="frame-11">
+              <div class="frame-12" aria-label="현재 프로필 이미지">
+                <span class="text-wrapper-7">통</span>
+              </div>
+            </div>
+            <button
+              type="button"
+              class="view-2"
+              aria-label="프로필 이미지 삭제"
+            >
+              <span class="rectangle"></span>
+              <span class="text-wrapper-8">삭제하기</span>
+            </button>
+            <button
+              type="button"
+              class="view-3"
+              aria-label="프로필 이미지 변경"
+            >
+              <span class="rectangle"></span>
+              <span class="text-wrapper-8">변경하기</span>
+            </button>
+          </section>
+          <section class="frame-13" aria-labelledby="written-posts-title">
+            <h2 class="text-wrapper-9" id="written-posts-title">작성 글</h2>
+            <article class="frame-14">
+              <div class="frame-15">
+                <span class="text-wrapper-10">통학 게시판</span>
+              </div>
+              <div class="frame-16">
+                <p class="element-2">1150번 빨버 시간표[2]</p>
+              </div>
+              <time class="frame-17" datetime="2026-04-28">
+                <span class="text-wrapper-11">2026.04.28</span>
+              </time>
+            </article>
+            <img class="line" src="img/line.png" alt="" />
+          </section>
+          <section class="frame-13" aria-labelledby="written-comments-title">
+            <h2 class="text-wrapper-9" id="written-comments-title">
+              작성 댓글
+            </h2>
+            <article class="frame-14">
+              <div class="frame-16">
+                <div class="frame-15">
+                  <span class="text-wrapper-10">통학 게시판</span>
+                </div>
+                <p class="element-2">네. 갑니다.</p>
+              </div>
+              <time class="frame-17" datetime="2026-04-28">
+                <span class="text-wrapper-11">2026.04.28</span>
+              </time>
+            </article>
+            <img class="line" src="img/line.png" alt="" />
+          </section>
+          <section class="frame-13" aria-labelledby="liked-posts-title">
+            <h2 class="text-wrapper-9" id="liked-posts-title">
+              좋아요 한 게시글
+            </h2>
+            <article class="frame-14">
+              <div class="frame-15">
+                <span class="text-wrapper-10">고양이 게시판</span>
+              </div>
+              <div class="frame-16">
+                <p class="element-2">고양이한테도 사과 먹일수 있음?</p>
+              </div>
+              <time class="frame-17" datetime="2026-05-01">
+                <span class="text-wrapper-11">2026.05.01</span>
+              </time>
+            </article>
+            <img class="line" src="img/line.png" alt="" />
+          </section>
+          <section
+            class="frame-18"
+            aria-labelledby="subscription-settings-title"
+          >
+            <div class="frame-19">
+              <h2 class="text-wrapper-12" id="subscription-settings-title">
+                구독 게시판 설정
+              </h2>
+              <p class="p">구독 게시판 순서를 바꿀 수 있어요.</p>
+            </div>
+            <div
+              class="view-wrapper"
+              tabindex="0"
+              aria-label="구독 게시판 목록"
+            >
+              <div class="view-4">
+                <div class="frame-20">
+                  <span class="text-wrapper-13">● 통학 게시판</span>
+                </div>
+                <div class="frame-20">
+                  <span class="text-wrapper-13">● 외대 근처 맛집 게시판</span>
+                </div>
+                <div class="frame-20">
+                  <span class="text-wrapper-14">● 컴퓨터공학과 게시판</span>
+                </div>
+                <div class="frame-20">
+                  <span class="text-wrapper-13">● 학식 게시판</span>
+                </div>
+                <div class="frame-20">
+                  <span class="text-wrapper-14">● 이중 전공 게시판</span>
+                </div>
+                <div class="frame-20">
+                  <span class="text-wrapper-13">● 분실물 게시판</span>
+                </div>
+                <div class="frame-20">
+                  <span class="text-wrapper-13">● 동아리 게시판</span>
+                </div>
+                <div class="frame-20">
+                  <span class="text-wrapper-13">● 고양이 게시판</span>
+                </div>
+              </div>
+            </div>
+            <img class="line" src="img/line.png" alt="" />
+          </section>
+          <form action="#" method="post" class="settings-form">
+            <section class="frame-21" aria-labelledby="nickname-title">
+              <div class="frame-22">
+                <h2 class="text-wrapper-12" id="nickname-title">닉네임</h2>
+                <p class="text-wrapper-15" id="nickname-help">
+                  닉네임은 변경 후 1주일동안 변경 불가능합니다.
+                </p>
+              </div>
+              <div class="frame-23">
+                <label for="nickname" class="sr-only">닉네임</label>
+                <input
+                  class="text-wrapper-16 form-input"
+                  id="nickname"
+                  name="nickname"
+                  type="text"
+                  value="통학러123"
+                  aria-describedby="nickname-help"
+                />
+              </div>
+            </section>
+            <section class="frame-24" aria-labelledby="status-title">
+              <div class="frame-22">
+                <h2 class="text-wrapper-12" id="status-title">상태 메세지</h2>
+                <p class="text-wrapper-17" id="status-help">
+                  지금 어떤 기분이세요?
+                </p>
+              </div>
+              <div class="frame-23">
+                <label for="status-message" class="sr-only">상태 메세지</label>
+                <input
+                  class="text-wrapper-16 form-input"
+                  id="status-message"
+                  name="statusMessage"
+                  type="text"
+                  value="잠을 자고 싶어.."
+                  aria-describedby="status-help"
+                />
+              </div>
+            </section>
+            <section class="frame-24" aria-labelledby="password-title">
+              <div class="frame-22">
+                <h2 class="text-wrapper-12" id="password-title">
+                  비밀번호 변경
+                </h2>
+                <p class="text-wrapper-17" id="password-help">
+                  비밀번호는 변경 후 1주일동안 변경 불가능합니다.
+                </p>
+              </div>
+              <div class="frame-23">
+                <label for="current-password" class="sr-only"
+                  >현재 비밀번호 입력</label
+                >
+                <input
+                  class="text-wrapper-16 form-input"
+                  id="current-password"
+                  name="currentPassword"
+                  type="password"
+                  placeholder="현재 비밀번호 입력"
+                  aria-describedby="password-help"
+                />
+              </div>
+              <div class="frame-23">
+                <label for="new-password" class="sr-only"
+                  >새로운 비밀번호 입력</label
+                >
+                <input
+                  class="text-wrapper-16 form-input"
+                  id="new-password"
+                  name="newPassword"
+                  type="password"
+                  placeholder="새로운 비밀번호 입력"
+                  aria-describedby="password-help"
+                />
+              </div>
+              <div class="frame-23">
+                <label for="confirm-password" class="sr-only"
+                  >새로운 비밀번호 입력 확인</label
+                >
+                <input
+                  class="text-wrapper-16 form-input"
+                  id="confirm-password"
+                  name="confirmPassword"
+                  type="password"
+                  placeholder="새로운 비밀번호 입력 확인"
+                  aria-describedby="password-help"
+                />
+              </div>
+            </section>
+            <div class="frame-25">
+              <button type="submit" class="select">
+                <span class="text-wrapper-18">확인</span>
+              </button>
+              <button type="button" class="select-2">
+                <span class="text-wrapper-18">회원 탈퇴</span>
+              </button>
+            </div>
+          </form>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

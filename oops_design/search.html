@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <title>검색 결과</title>
+    <link rel="stylesheet" href="css/globals.css" />
+    <link rel="stylesheet" href="css/search-style.css" />
+  </head>
+  <body>
+    <main class="search">
+      <header class="frame">
+        <div class="div">
+          <h1 class="element-wrapper">
+            <img class="element" src="img/oops.png" alt="Loops 로고" />
+          </h1>
+          <nav class="frame-2" aria-label="주요 메뉴">
+            <a href="#" class="div-wrapper">
+              <span class="text-wrapper">게시판</span>
+            </a>
+            <a href="#" class="frame-3">
+              <span class="text-wrapper-2">학교 홈페이지</span>
+            </a>
+            <a href="#" class="view" aria-label="로그인 또는 회원가입">
+              <img
+                class="image-removebg"
+                src="img/men.png"
+                alt=""
+                aria-hidden="true"
+              />
+              <span class="text-wrapper-3">로그인 / 회원가입</span>
+            </a>
+          </nav>
+        </div>
+        <form class="frame-wrapper" role="search" aria-label="게시물 검색">
+          <label class="frame-4" for="search-input">
+            <img
+              class="free-icon-magnifier"
+              src="img/search.png"
+              alt=""
+              aria-hidden="true"
+            />
+            <input
+              class="text-wrapper-4"
+              id="search-input"
+              name="q"
+              type="search"
+              value="사과"
+              aria-label="검색어"
+            />
+          </label>
+        </form>
+        <section class="frame-5" aria-labelledby="search-result-heading">
+          <div class="frame-6">
+            <h2 class="p" id="search-result-heading">
+              <span class="span">‘사과’ </span
+              ><span class="text-wrapper-5">검색결과</span>
+            </h2>
+          </div>
+        </section>
+        <div class="navbar-wrapper">
+          <nav class="navbar" aria-label="정렬 옵션">
+            <button type="button" class="text-wrapper-6" aria-pressed="true">
+              최신순
+            </button>
+            <button type="button" class="text-wrapper-6" aria-pressed="false">
+              오래된순
+            </button>
+            <button type="button" class="text-wrapper-6" aria-pressed="false">
+              조회순
+            </button>
+            <button type="button" class="text-wrapper-6" aria-pressed="false">
+              추천 순
+            </button>
+          </nav>
+        </div>
+      </header>
+      <section class="frame-7" aria-label="검색 결과 목록">
+        <section class="frame-8" aria-labelledby="board-free">
+          <div class="frame-9">
+            <h3 class="text-wrapper-7" id="board-free">자유게시판</h3>
+          </div>
+          <article class="frame-10">
+            <h4 class="element-2">사과 먹고싶다 진짜 사과 어디 없음?</h4>
+            <div class="frame-11" aria-label="게시물 정보">
+              <span class="text-wrapper-8">사과러버</span>
+              <time class="text-wrapper-8" datetime="2026-04-28"
+                >2026.04.28</time
+              >
+              <div class="frame-12" aria-label="조회수 728">
+                <img
+                  class="free-icon-open-eye"
+                  src="img/eye.png"
+                  alt=""
+                  aria-hidden="true"
+                />
+                <span class="text-wrapper-8">728</span>
+              </div>
+              <div class="frame-12" aria-label="댓글수 13">
+                <img
+                  class="image"
+                  src="img/good.png"
+                  alt=""
+                  aria-hidden="true"
+                />
+                <span class="text-wrapper-8">13</span>
+              </div>
+            </div>
+          </article>
+          <article class="frame-10">
+            <h4 class="element-2">사과 드리겠습니다</h4>
+            <div class="frame-11" aria-label="게시물 정보">
+              <span class="text-wrapper-8">익명</span>
+              <time class="text-wrapper-8" datetime="2026-04-28"
+                >2026.04.28</time
+              >
+              <div class="frame-12" aria-label="조회수 728">
+                <img
+                  class="free-icon-open-eye"
+                  src="img/eye.png"
+                  alt=""
+                  aria-hidden="true"
+                />
+                <span class="text-wrapper-8">728</span>
+              </div>
+              <div class="frame-12" aria-label="댓글수 13">
+                <img
+                  class="image"
+                  src="img/good.png"
+                  alt=""
+                  aria-hidden="true"
+                />
+                <span class="text-wrapper-8">13</span>
+              </div>
+            </div>
+          </article>
+          <img class="line" src="img/line.png" alt="" aria-hidden="true" />
+        </section>
+        <section class="frame-8" aria-labelledby="board-cat">
+          <div class="frame-9">
+            <h3 class="text-wrapper-7" id="board-cat">고양이 게시판</h3>
+          </div>
+          <article class="frame-10">
+            <h4 class="element-2">고양이도 사과 먹일수 있음?</h4>
+            <div class="frame-11" aria-label="게시물 정보">
+              <span class="text-wrapper-8">익명</span>
+              <time class="text-wrapper-8" datetime="2026-05-01"
+                >2026.05.01</time
+              >
+              <div class="frame-12" aria-label="조회수 728">
+                <img
+                  class="free-icon-open-eye"
+                  src="img/eye.png"
+                  alt=""
+                  aria-hidden="true"
+                />
+                <span class="text-wrapper-8">728</span>
+              </div>
+              <div class="frame-12" aria-label="댓글수 13">
+                <img
+                  class="image"
+                  src="img/good.png"
+                  alt=""
+                  aria-hidden="true"
+                />
+                <span class="text-wrapper-8">13</span>
+              </div>
+            </div>
+          </article>
+          <img class="line" src="img/line.png" alt="" aria-hidden="true" />
+        </section>
+      </section>
+    </main>
+  </body>
+</html>
