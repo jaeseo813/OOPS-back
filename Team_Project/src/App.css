@@ -1,0 +1,76 @@
+*{
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+  background-color: #e9eff4; 
+  color: #333333;
+  min-height: 100vh;
+}
+
+:root {
+  /* Common Style Variables */
+
+  /* Color */
+  --color-black: #000;
+  --color-darkslategray-100: #002843;
+  --color-darkslategray-200: rgba(0, 40, 67, 0.6);
+  --color-dimgray: #686868;
+  --color-white: #fff;
+  --color-whitesmoke: #edf1f4;
+
+  /* Gap */
+  --gap-10: 10px;
+  --gap-15: 15px;
+
+  /* Padding */
+  --padding-0: 0px;
+  --padding-8: 8px;
+  --padding-10: 10px;
+  --padding-20: 20px;
+  --padding-30: 30px;
+
+  /* BorderRadius */
+  --br-20: 20px;
+
+  /* Font */
+  --font-inherit: inherit;
+  --font-inter: Inter;
+  --font-iosevka-charon: Iosevka Charon;
+
+  /* FontSize */
+  --fs-15: 15px;
+  --fs-16: 16px;
+  --fs-18: 18px;
+  --fs-20: 20px;
+  --fs-24: 24px;
+  --fs-30: 30px;
+  --fs-inherit: inherit;
+
+  /* Shadows */
+  --shadow-drop: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  --shadow-drop-1: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  --text-shadow-1: 3px 0 0 var(--color-white), 0 3px 0 var(--color-white),
+    -3px 0 0 var(--color-white), 0 -3px 0 var(--color-white);
+
+  /* WidthHeights */
+  --height-248: 248px;
+  --height-23_5: 23.5px;
+  --min-w-173: 173px;
+  --width-173: 173px;
+
+  /* LineHeights */
+  --lh-24: 24px;
+  --lh-27: 27px;
+  --lh-36: 36px;
+}
+
+.app-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

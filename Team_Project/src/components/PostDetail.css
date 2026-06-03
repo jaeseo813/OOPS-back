@@ -1,0 +1,274 @@
+.post-detail{
+    display: flex; 
+    flex-direction: column; 
+    padding: 30px 40px; 
+    gap: 30px; 
+    animation: fadeUpDown 0.56s ease-in; 
+}
+
+@keyframes fadeUpDown{
+    from{
+        opacity: 0; 
+        transform: translateY(20px);
+    }
+
+    to{
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+.contents-wrapper{
+    display: flex; 
+    align-items: flex-start; 
+    gap: 20px;
+}
+
+.content-area {
+    flex-grow: 1;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.post-card {
+    border-top: 2px solid #002b49;
+    padding-top: 16px;
+}
+
+.post-card__title-row {
+    margin-bottom: 8px;
+}
+
+.post-card__title {
+    font-size: 18px;
+    color: #002b49;
+    font-weight: bold;
+}
+
+/* 핵심 수정: 메타 정보와 통계 정렬 */
+.post-card__meta {
+    margin-top: 6px;
+    font-size: 12px;
+    color: #777777;
+    display: flex;
+    justify-content: space-between; /* 양 끝 정렬 */
+    align-items: center;
+    border-bottom: 1px solid #ccd6dd;
+    padding-bottom: 10px;
+}
+
+.post-card__meta-info {
+    display: flex;
+    gap: 10px;
+}
+
+.post-card__stats {
+    font-size: 12px;
+    color: #777777;
+}
+
+.post-card__author { font-weight: bold; }
+
+.post-card__content {
+    padding: 20px 0;
+}
+
+.post-card__text {
+    font-size: 14px;
+    color: #333333;
+    margin-bottom: 20px;
+    /* 긴 글이 들어왔을때 단락을 구분해줄 수 있도록 css 추가 */
+    white-space: pre-wrap;
+    word-break: break-all;
+    line-height: 1.6; 
+}
+
+.post-image-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.post-main-image {
+    max-width: 450px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    border: 1px solid #ccd6dd;
+    border-radius: 6px;
+}
+
+.post-card__actions {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 25px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #ccd6dd;
+}
+
+.action-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+
+/* 📌 기본 투표 버튼 공통 스타일 */
+.btn-vote {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid #e2e8f0;
+  border-radius: 50%;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out; /* 부드러운 전환 효과 */
+}
+
+.btn-vote img {
+  width: 22px;
+  height: 22px;
+  transition: transform 0.2s ease;
+}
+
+/* 🔍 마우스를 올렸을 때 (Hover) 캐주얼한 피드백 */
+.btn-vote:hover {
+  transform: translateY(-2px); /* 살짝 위로 둥실 떠오름 */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* 🔍 마우스로 누르고 있는 순간 (Active) */
+.btn-vote:active {
+  transform: scale(0.95); /* 꾹 눌리는 느낌 */
+}
+
+/* -------------------------------------------------- */
+
+/* 🔥 [핵심] 1. 추천(Like) 버튼이 활성화(active) 되었을 때 스타일 */
+.btn-vote--like.active {
+  background-color: #e0f2fe; /* 부드러운 하늘색 배경 */
+  border-color: #38bdf8;     /* 파란색 테두리 */
+}
+
+.btn-vote--like.active img {
+  /* 활성화 시 아이콘에 팝업 애니메이션 효과 추가 */
+  transform: scale(1.1);
+  filter: drop-shadow(0 2px 4px rgba(56, 189, 248, 0.4));
+}
+
+/* 🔥 [핵심] 2. 비추천(Dislike) 버튼이 활성화(active) 되었을 때 스타일 */
+.btn-vote--dislike.active {
+  background-color: #fee2e2; /* 부드러운 붉은색 배경 */
+  border-color: #f87171;     /* 빨간색 테두리 */
+}
+
+.btn-vote--dislike.active img {
+  transform: scale(1.1);
+  filter: drop-shadow(0 2px 4px rgba(248, 113, 113, 0.4));
+}
+
+/* -------------------------------------------------- */
+
+.vote-count {
+  font-size: 14px;
+  font-weight: 600;
+  color: #4b5563;
+  margin-top: 4px;
+  text-align: center;
+}
+
+/* ==========================================================================
+   MOBILE RESPONSIVE (768px 이하)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .post-detail {
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .contents-wrapper {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .contents-wrapper .sidebar {
+    display: none; /* 게시글 상세에서도 사이드바 숨김 */
+  }
+
+  .content-area {
+    padding: 16px;
+    border-radius: 8px;
+  }
+
+  .post-card__title {
+    font-size: 16px;
+  }
+
+  .post-card__meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .post-card__text {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .post-main-image {
+    max-width: 100%;
+  }
+
+  .post-card__actions {
+    gap: 16px;
+    margin-top: 16px;
+    padding-bottom: 20px;
+  }
+
+  .btn-vote {
+    width: 40px;
+    height: 40px;
+  }
+
+  .btn-vote img {
+    width: 18px;
+    height: 18px;
+  }
+
+  .vote-count {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .post-detail {
+    padding: 12px;
+  }
+
+  .content-area {
+    padding: 12px;
+  }
+
+  .post-card__title {
+    font-size: 15px;
+  }
+
+  .post-card__actions {
+    gap: 12px;
+  }
+
+  .btn-vote {
+    width: 36px;
+    height: 36px;
+  }
+}
+

@@ -1,0 +1,335 @@
+/* 1. 사이드바 전체 레이아웃 구역 */
+.sidebar {
+    width: 240px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* 2. 네비게이션 메뉴 버튼 공통 스타일 베이스 */
+.sidebar__btn {
+    width: 100%;
+    padding: 13px 16px; /* 위아래 볼륨감을 살려 버튼 영역을 확장 */
+    text-align: left;
+    font-size: 14px;
+    font-weight: 600; /* 색상 가독성을 위해 선명한 볼드 처리 */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+    transition: all 0.25s ease-in-out; /* 배경색과 패딩 변화를 위한 부드러운 트랜지션 */
+}
+
+
+/* 3. 개별 메뉴 버튼 색상 커스텀 (★요청사항 반영) */
+
+/* [공지사항] - 메인 시그니처 딥 네이비 */
+.sidebar__btn--notice { 
+    background-color: #002b49; 
+    color: #ffffff; 
+}
+.sidebar__btn--notice:hover {
+    background-color: #00192b;
+    box-shadow: 0 4px 12px rgba(0, 43, 73, 0.15);
+}
+
+/* [자유 게시판] - 상시 파스텔 블루 적용 */
+.sidebar__btn--free {
+    background-color: #e6f0fa; /* 상시 부드러운 파스텔 블루 */
+    color: #002b49; /* 글자는 깊은 네이비 */
+}
+.sidebar__btn--free:hover {
+    background-color: #d0e4f7; /* 호버 시 한 단계 더 진한 블루 */
+    padding-left: 22px; /* 오른쪽으로 부드럽게 밀리는 인터랙션 */
+    box-shadow: 0 4px 10px rgba(0, 43, 73, 0.08);
+}
+
+/* [마이페이지] - 상시 소프트 살구 피치 적용 */
+.sidebar__btn--mypage {
+    background-color: #e6f0fa;; /* 상시 따뜻한 피치 베이지 */
+    color: #002b49; /* 가독성을 위한 차분한 브릭 오렌지 문자색 */
+    margin-top: 0; /* 불필요한 마진 상쇄 */
+}
+.sidebar__btn--mypage:hover {
+    background-color: #ffe2d5; /* 호버 시 한 단계 더 진한 피치 */
+    color: #82300f;
+    padding-left: 22px; /* 자유게시판과 대칭되는 부드러운 밀림 효과 */
+    box-shadow: 0 4px 10px rgba(163, 66, 26, 0.08);
+}
+
+/* [로그인 / 회원가입] - 하단 메인 포인트 */
+.sidebar__btn--login-info { 
+    background-color: #002b49; 
+    color: #ffffff; 
+    text-align: center; 
+    box-shadow: 0 4px 12px rgba(0, 43, 73, 0.1);
+}
+.sidebar__btn--login-info:hover {
+    background-color: #001f35;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(0, 43, 73, 0.18);
+}
+.sidebar__btn--login-info:active {
+    transform: translateY(0);
+}
+
+
+/* 4. 드롭다운 컨테이너 및 서브 메뉴 리스트 */
+.sidebar__dropdown-container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+}
+
+.sidebar__dropdown-trigger {
+    width: 100%;
+    padding: 12px 16px;
+    background-color: #002b49;
+    color: #ffffff;
+    text-align: left;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.sidebar__menu-list {
+    list-style: none;
+    padding: 4px 0;
+    margin: 0;
+    background-color: #f8fafc;
+}
+
+.sidebar__menu-item a {
+    display: block;
+    padding: 9px 20px;
+    font-size: 13px;
+    color: #64748b;
+    text-decoration: none;
+    transition: all 0.15s ease;
+}
+.sidebar__menu-item a:hover {
+    color: #002b49;
+    background-color: #edf2f7;
+}
+
+.sidebar__menu-item--active a {
+    background-color: #e2e8f0;
+    color: #002b49;
+    font-weight: 600;
+}
+
+
+/* 5. 우측 하단 사이드바 위젯 카드 영역 */
+.sidebar__widget {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0; /* 한층 더 부드럽고 얇아진 경계선 */
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
+}
+
+.widget-popular__title, .widget-board-preview__title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 14px 0;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #f1f5f9;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: color 0.15s ease;
+}
+.widget-popular__title:hover, .widget-board-preview__title:hover {
+    color: #002b49;
+}
+
+.widget-title-icon { 
+    width: 14px; 
+    height: 14px;
+    margin-right: 6px; 
+}
+
+.widget-popular__list li, .widget-board-preview__list li {
+    font-size: 13px;
+    margin-bottom: 10px;
+    color: #475569;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    transition: color 0.15s ease;
+}
+.widget-popular__list li:hover, .widget-board-preview__list li:hover {
+    color: #002b49;
+    text-decoration: underline;
+}
+.widget-popular__list li:last-child, .widget-board-preview__list li:last-child {
+    margin-bottom: 0;
+}
+
+.comment-count { 
+    color: #004b7c; 
+    font-weight: 600; 
+    margin-left: 4px; 
+}
+
+
+/* 6. 우측 메인 콘텐츠 보드 영역 및 테이블 인프라 */
+.content-area {
+    flex-grow: 1;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    min-height: 800px;
+    display: flex;
+    flex-direction: column;
+}
+
+.board-list-inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.board-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #002b49;
+    padding-bottom: 12px;
+    margin-bottom: 15px;
+}
+
+.sort-tabs { 
+    display: flex; 
+    gap: 20px; 
+}
+
+.sort-tab { 
+    font-size: 14px; 
+    font-weight: bold; 
+    color: #777; 
+    cursor: pointer; 
+}
+.sort-tab.active { 
+    color: #002b49; 
+}
+
+.btn-write-simple { 
+    font-size: 13px; 
+    font-weight: bold; 
+    color: #002b49; 
+}
+
+.board-table { 
+    width: 100%; 
+    border-collapse: collapse; 
+}
+.board-table th { 
+    padding: 12px; 
+    font-size: 13px; 
+    color: #666; 
+    border-bottom: 1px solid #eee; 
+    text-align: center; 
+}
+
+.board-table td { 
+    padding: 18px 12px; 
+    font-size: 14px; 
+    border-bottom: 1px solid #f4f7f9; 
+    text-align: center; 
+    color: #444; 
+}
+.board-table td.td-title { 
+    text-align: left; 
+    font-weight: 500; 
+    color: #333; 
+    padding-left: 20px; 
+}
+
+.reply-badge { 
+    color: #004b7c; 
+    font-weight: bold; 
+    margin-left: 3px; 
+}
+
+.pagination-box {
+    margin-top: auto;
+    padding-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+/* ==========================================================================
+   MOBILE RESPONSIVE (768px 이하)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .sidebar {
+        display: none; /* 모바일에서 사이드바 숨김 */
+    }
+
+    .content-area {
+        padding: 16px;
+        min-height: auto;
+        border-radius: 8px;
+    }
+
+    .board-table th {
+        padding: 8px 6px;
+        font-size: 11px;
+    }
+
+    .board-table td {
+        padding: 12px 6px;
+        font-size: 12px;
+    }
+
+    .board-table td.td-title {
+        padding-left: 8px;
+    }
+
+    .pagination-box {
+        padding-top: 20px;
+        gap: 10px;
+    }
+
+    /* 모바일에서 게시글 테이블: 제목만 표시 */
+    .board-table .col-num,
+    .board-table .col-author,
+    .board-table .col-date,
+    .board-table .col-view,
+    .board-table .col-vote {
+        display: none;
+    }
+
+    .board-table td:nth-child(1),  /* 번호 */
+    .board-table td:nth-child(3),  /* 글쓴이 */
+    .board-table td:nth-child(4),  /* 등록일 */
+    .board-table td:nth-child(5),  /* 조회수 */
+    .board-table td:nth-child(6) { /* 추천 */
+        display: none;
+    }
+
+    .board-table td.td-title {
+        text-align: left;
+        font-weight: 500;
+        color: #333;
+        padding: 14px 4px;
+        width: 100%;
+    }
+
+    .board-table th.col-title {
+        text-align: left;
+        padding-left: 4px;
+        width: 100%;
+    }
+}

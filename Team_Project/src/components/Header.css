@@ -1,0 +1,279 @@
+/* ==========================================================================
+   HEADER MAIN LAYOUT
+   ========================================================================== */
+
+.header {
+    background-color: #ffffff;
+    padding: 16px 40px;
+    border-bottom: 1px solid #ccd6dd;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.header__inner {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__logo {
+    cursor: pointer; 
+}
+
+.header__logo img {
+    height: 36px;
+    display: block;
+}
+
+/* ==========================================================================
+   SEARCH BAR (중복 제거 및 돋보기 일체형 리디자인 🌟)
+   ========================================================================== */
+.header__search-bar {
+    position: relative; /* 💡 내부 돋보기 버튼 정렬의 기준점 지정 */
+    flex-grow: 1;
+    margin: 0 40px;
+    max-width: 520px;
+    display: flex;
+    align-items: center;
+}
+
+.header__search-bar input {
+    width: 100%;
+    /* 💡 오른쪽에 있는 돋보기 아이콘과 겹치지 않도록 우측 패딩을 넉넉히 줍니다. */
+    padding: 10px 45px 10px 22px; 
+    border: 1px solid #002b49;
+    border-radius: 24px;
+    font-size: 15px;
+    outline: none;
+    transition: box-shadow 0.2s ease;
+}
+
+/* 인풋창 포커스 시 부드러운 하이라이트 효과 효과 (선택) */
+.header__search-bar input:focus {
+    box-shadow: 0 0 0 3px rgba(0, 43, 73, 0.15);
+}
+
+/* 💡 버튼 틀을 완전히 깨부수고 투명한 아이콘 형태로 변형 */
+.header__search-btn {
+    position: absolute;
+    right: 18px; /* 인풋창 우측 라운딩 내부에 정밀 배치 */
+    top: 50%;
+    transform: translateY(-50%);
+    
+    background: none;    /* 투명화 */
+    border: none;        /* 테두리 제거 */
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s;
+}
+
+.header__search-btn:hover {
+    opacity: 0.6; /* 마우스 올렸을 때 살짝 흐려지는 상용 피드백 */
+}
+
+.header__search-icon {
+    width: 18px;
+    height: 18px;
+    display: block;
+}
+
+.header__clear-btn {
+    position: absolute;
+    right: 45px;
+    top: 50%; 
+    transform: translateY(-50%); 
+    background: none; 
+    border: none; 
+    font-size: 18px; 
+    cursor: pointer; 
+    color: #999; 
+}
+
+/* ==========================================================================
+   NAVIGATION & LINKS (병합 및 정렬 튜닝 완료 ⚙️)
+   ========================================================================== */
+
+/* 상단 메뉴들을 감싸는 네비게이션 바 */
+.header__nav {
+    display: flex;
+    align-items: center; /* 💡 모든 메뉴, 프로필, 로그인 버튼의 세로 정렬을 가운데로 정렬 */
+    gap: 20px;           /* 메뉴 간의 정당한 간격 격리 */
+}
+
+.header__link {
+    font-size: 16px;
+    font-weight: bold;
+    color: #002b49;
+    cursor: pointer; 
+}
+
+/* 프로필 존을 감싸고 있는 인증 래퍼 */
+.header__auth-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.header__btn-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    background-color: #002b49;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.header__user-icon--bright {
+    filter: brightness(1.7);
+    width: 18px;
+}
+
+/* ====================================================
+   HEADER USER PROFILE ZONE (로그인 성공 시 우측 상단 프로필)
+==================================================== */
+
+.header__profile-zone {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    padding: 4px 14px 4px 6px;
+    border-radius: 20px;
+    background-color: #f5f8fa; /* 메뉴들과 이질감 없는 부드러운 배경색 */
+    border: 1px solid #eef2f5;
+    transition: all 0.2s ease-in-out;
+    
+    /* 💡 프로필이 뿅 나타날 때 툭 켜지지 않고 부드럽게 페이드인 되도록 애니메이션 추가 */
+    animation: fadeInUp 0.25s ease-out; 
+}
+
+/* 마우스를 올렸을 때 살짝 떠오르며 메인 딥네이비 테두리로 변경 */
+.header__profile-zone:hover {
+    background-color: #ffffff;
+    border-color: #002b49;
+    box-shadow: 0 4px 10px rgba(0, 43, 73, 0.06);
+}
+
+/* 프로필 이미지를 감싸는 액자 프레임 */
+.header__avatar-holder {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: 1px solid #ccd6dd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* 원 밖으로 사진이 나가지 않게 자름 */
+    padding: 5px; 
+}
+
+/* 마이페이지에서 바꾼 긴 이미지 주소(Base64)도 깨짐 없이 원 안에 꽉 차게 */
+.header__user-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 가로세로 비율 유지하며 꽉 채우기 */
+}
+
+/* 로그인된 유저 네임 텍스트 */
+.header__user-name {
+    font-size: 13.5px;
+    font-weight: bold;
+    color: #002b49; /* 메인 브랜드 컬러 매칭 */
+}
+
+/* ==========================================================================
+   MOBILE RESPONSIVE (768px 이하)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .header {
+        padding: 12px 16px;
+    }
+
+    .header__inner {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .header__logo img {
+        height: 28px;
+    }
+
+    .header__search-bar {
+        order: 3;
+        margin: 0;
+        max-width: none;
+        width: 100%;
+    }
+
+    .header__nav {
+        gap: 10px;
+    }
+
+    .header__link {
+        display: none; /* 모바일에서 "홈 게시판", "학교 홈페이지" 링크 숨김 */
+    }
+
+    .header__btn-login {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    .header__profile-zone {
+        padding: 4px 10px 4px 4px;
+    }
+
+    .header__user-name {
+        font-size: 12px;
+    }
+
+    .header__avatar-holder {
+        width: 28px;
+        height: 28px;
+    }
+
+    .header__search-bar input {
+        font-size: 14px;
+        padding: 8px 40px 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 10px 12px;
+    }
+
+    .header__search-bar input {
+        font-size: 13px;
+        padding: 7px 36px 7px 14px;
+    }
+
+    .header__search-icon {
+        width: 15px;
+        height: 15px;
+    }
+
+    .header__btn-login {
+        padding: 6px 10px;
+        font-size: 11px;
+        gap: 5px;
+    }
+
+    .header__user-icon--bright {
+        width: 14px;
+    }
+}

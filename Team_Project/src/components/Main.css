@@ -1,0 +1,56 @@
+.main-layout {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f8f9fa; /* 부드러운 회색 배경 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 100px;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 메인 타이틀 디자인 */
+.oops {
+  font-size: 54px; /* 웹에서 시원해 보이는 크기 */
+  font-weight: 900;
+  text-align: center;
+  margin: 80px 0 40px;
+  letter-spacing: -1.5px;
+  color: #1a1a1a;
+  
+  /* 애니메이션 적용 */
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* ==========================================================================
+   MOBILE RESPONSIVE (768px 이하)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .main-layout {
+    padding-bottom: 60px;
+  }
+
+  .oops {
+    font-size: 36px;
+    margin: 40px 0 20px;
+    letter-spacing: -1px;
+  }
+}
+
+@media (max-width: 480px) {
+  .oops {
+    font-size: 28px;
+    margin: 30px 0 16px;
+  }
+}

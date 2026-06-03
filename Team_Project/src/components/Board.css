@@ -1,0 +1,165 @@
+/* Board.css */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.board-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  /* SearchBar보다 조금 더 늦게 등장 (0.4s 지연) */
+  animation: fadeInUp 0.8s ease-out 0.4s forwards;
+  opacity: 0;
+}
+
+/* 카드 공통 스타일 */
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e9ecef;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* 상단 배치 (인기글:구독 = 2:1 비율) */
+.top-row {
+  display: grid;
+  grid-template-columns: auto;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.card-header h2 {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: #1a1a1a;
+}
+
+/* 게시글 리스트 스타일 */
+.post-list {
+  list-style: none;
+  padding: 0;
+}
+
+.post-list li {
+  padding: 12px 0;
+  border-bottom: 1px solid #f1f3f5;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.post-list li:last-child {
+  border-bottom: none;
+}
+
+/* 하단 3열 그리드 */
+.bottom-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.board-item h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #333;
+  border-left: 4px solid #007bff; /* 포인트 데코 */
+  padding-left: 10px;
+}
+
+.board-item p {
+  font-size: 14px;
+  color: #666;
+  margin: 8px 0;
+  cursor: pointer;
+}
+
+/* 반응형: 화면이 작아지면 1열로 */
+@media (max-width: 900px) {
+  .top-row, .bottom-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   MOBILE RESPONSIVE (768px 이하)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .board-container {
+    margin: 20px auto;
+    padding: 0 12px;
+  }
+
+  .card {
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .card-header h2 {
+    font-size: 16px;
+    margin-bottom: 14px;
+  }
+
+  .top-row {
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .bottom-grid {
+    gap: 16px;
+  }
+
+  .post-list li {
+    padding: 10px 0;
+    font-size: 13px;
+  }
+
+  .board-item h3 {
+    font-size: 15px;
+    padding-left: 8px;
+  }
+
+  .board-item p {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .board-container {
+    margin: 12px auto;
+    padding: 0 8px;
+  }
+
+  .card {
+    padding: 12px;
+  }
+
+  .card-header h2 {
+    font-size: 14px;
+  }
+
+  .board-item h3 {
+    font-size: 14px;
+  }
+}

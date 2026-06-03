@@ -1,0 +1,28 @@
+/* ==========================================================================
+   COMMENT SECTION
+   ========================================================================== */
+.comment-section {
+    margin-top: 25px;
+}
+
+.comment-section__title {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 15px;
+}
+
+.comment-section__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.comment-sort{
+   display: flex; 
+   flex-direction: column;
+   gap: 15px; 
+}
+
+
+

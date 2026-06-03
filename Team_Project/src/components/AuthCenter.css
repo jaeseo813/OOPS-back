@@ -1,0 +1,245 @@
+/* ==========================================================================
+   LOOPS 인증 센터 - 통합 마스터 CSS (레이아웃 버그 수정 버전 🌟)
+   ========================================================================== */
+
+/* 1. 전역 body/html 단계에서 높이가 깨지지 않도록 안전장치 확보 */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* 2. 배경 및 정중앙 기본 레이아웃 뼈대 */
+.auth-container {
+    width: 100%;
+    background-color: #e9eff4;       /* 스크린샷 속 은은하고 차분한 그레이 블루 배경 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;            /* 가로축 정중앙 정렬 */
+    justify-content: center;         /* 세로축 정중앙 정렬 */
+    padding: 60px 20px;              /* 상하 여백을 주어 푸터/헤더와의 간격 확보 */
+    box-sizing: border-box;
+    animation: authCardFadeIn 0.54s ease-in; 
+}
+
+a { 
+    text-decoration: none; 
+    color: inherit; 
+}
+
+button { 
+    border: none; 
+    background: none; 
+    cursor: pointer; 
+    outline: none; 
+}
+
+/* 4. 새하얀 도화지 같은 메인 카드 디자인 */
+.auth-card {
+    background-color: #fff;
+    border-radius: 12px;       /* 스크린샷 특유의 부드럽고 둥근 모서리 */
+    padding: 50px 45px;        /* 내부 컴포넌트들의 정돈된 여백 */
+    min-width: 600px;
+    height: 600px;
+    min-height: 680px;  
+    display: flex;
+    flex-direction: column;
+    gap: 32px;                 /* 타이틀, 폼, 하단 링크 사이의 여유로운 간격 */
+    box-sizing: border-box;
+}
+
+.auth-card__header {
+    text-align: center;
+}
+
+.auth-title {
+    font-size: 26px;
+    color: #002b49;            /* 시그니처 딥네이비 컬러 */
+    font-weight: bold;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+}
+
+.auth-subtitle {
+    font-size: 13px;
+    color: #777777;
+    letter-spacing: -0.3px;
+}
+
+/* 5. FORM 구성 요소 및 입력창(INPUT) */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;                 /* 인풋 입력 필드 간의 간격 */
+}
+
+.input-field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.input-label {
+    font-size: 14px;
+    color: #333333;
+    font-weight: bold;
+    padding-left: 2px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 14px 16px;        /* 스크린샷처럼 답답하지 않고 시원하게 뚫린 입력 영역 높이 */
+    border: 1px solid #ccd6dd;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    color: #333333;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+/* 입력창 클릭(포커스) 시 하이라이트 효과 */
+.form-input:focus {
+    border-color: #002b49;
+    box-shadow: 0 0 0 3px rgba(0, 43, 73, 0.06);
+}
+
+/* 6. 하단 꽉 차는 메인 시그니처 버튼 */
+.btn-auth-primary {
+    background-color: #002b49;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 14px;
+    border-radius: 6px;
+    width: 100%;
+    text-align: center;
+    margin-top: 12px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-auth-primary:hover {
+    background-color: #001f35; /* 마우스 오버 시 살짝 묵직해지는 딥네이비 */
+}
+
+/* 7. 하단 보조 내비게이션 링크 스트리트 */
+.auth-links-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-top: 4px;
+    font-size: 13px;
+}
+
+.auth-link-item {
+    color: #444444;
+    transition: color 0.2s ease;
+}
+
+.auth-link-item:hover {
+    color: #002b49;
+    text-decoration: underline;
+}
+
+.auth-link-item--accent {
+    color: #002b49;
+    font-weight: bold;
+}
+
+.auth-link-divider {
+    color: #ccd6dd;
+    font-size: 11px;
+}
+
+.auth-info-text {
+    color: #888888;
+}
+
+/* 8. 회원가입 및 비번변경 비밀번호 불일치 에러 가이드라인 */
+.error-text {
+    font-size: 12px;
+    color: #e03131; /* 시인성이 높은 부드러운 경고용 레드 */
+    font-weight: 500;
+    margin-top: 6px;
+    padding-left: 2px;
+    animation: fadeInError 0.2s ease-in-out; /* 에러 메시지 등장 시 자연스러운 애니메이션 효과 */
+}
+
+/* ==========================================================================
+   INTERACTION ANIMATIONS (전환 및 알림 애니메이션 효과)
+   ========================================================================== */
+
+/* 카드 스위칭 시 페이드인 효과 */
+@keyframes authCardFadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 유효성 검증 에러 메시지 드롭인 효과 */
+@keyframes fadeInError {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   MOBILE RESPONSIVE (768px 이하)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .auth-container {
+        padding: 30px 16px;
+    }
+
+    .auth-card {
+        min-width: auto;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        min-height: auto;
+        padding: 30px 20px;
+        gap: 24px;
+    }
+
+    .auth-title {
+        font-size: 22px;
+    }
+
+    .auth-form {
+        gap: 16px;
+    }
+
+    .form-input {
+        padding: 12px 14px;
+    }
+
+    .btn-auth-primary {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .auth-links-row {
+        gap: 10px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .auth-container {
+        padding: 20px 12px;
+    }
+
+    .auth-card {
+        padding: 24px 16px;
+        border-radius: 10px;
+    }
+
+    .auth-title {
+        font-size: 20px;
+    }
+
+    .auth-subtitle {
+        font-size: 12px;
+    }
+}

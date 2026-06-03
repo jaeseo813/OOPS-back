@@ -1,0 +1,95 @@
+/* 댓글 입력 폼 전체 감싸는 박스 */
+.comment-form {
+    background-color: #ffffff;
+    border: 1px solid #e1e8ed;
+    border-radius: 8px;
+    padding: 16px;
+    margin-top: 20px;
+}
+
+.comment-form__user-info {
+    font-size: 13px;
+    color: #4a5568;
+    margin-bottom: 10px;
+}
+
+/* 입력창 wrapper를 flex column 구조로 설정 */
+.comment-form__input-wrapper {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccd6dd;
+    border-radius: 6px;
+    background-color: #ffffff;
+    overflow: hidden; /* textarea와 버튼 영역이 부모 라운딩을 삐져나가지 않게 처리 */
+}
+
+/* 텍스트 영역 스타일 수정 (테두리를 없애고 투명하게) */
+.comment-form__textarea {
+    width: 100%;
+    height: 80px;
+    padding: 12px;
+    border: none;
+    resize: none;
+    font-size: 14px;
+    color: #333333;
+    outline: none;
+    font-family: inherit;
+}
+
+/* 💡 버튼을 감싸는 하단 바 영역 */
+.comment-form__actions {
+    display: flex;
+    justify-content: flex-end; /* 오른쪽 끝으로 버튼 밀기 */
+    padding: 8px 12px;
+    background-color: #f8f9fa; /* 상단 입력창과 구분되도록 옅은 배경 배치 */
+    border-top: 1px solid #edf1f3;
+}
+
+/* 💡 대망의 이쁜 등록 버튼 스타일 */
+.comment-form__btn-submit {
+    background-color: #002b49;  /* 기존 헤더 컬러와 맞춘 신뢰감 있는 네이비 계열 */
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.15s ease, transform 0.1s ease;
+    outline: none;
+}
+
+/* 마우스를 올렸을 때 살짝 밝아짐 */
+.comment-form__btn-submit:hover {
+    background-color: #00406c;
+}
+
+/* 클릭하는 순간 쫀득하게 눌리는 효과 */
+.comment-form__btn-submit:active {
+    transform: scale(0.96);
+}
+
+/* ==========================================================================
+   MOBILE RESPONSIVE (768px 이하)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .comment-form {
+        padding: 12px;
+    }
+
+    .comment-form__textarea {
+        height: 60px;
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    .comment-form__actions {
+        padding: 6px 10px;
+    }
+
+    .comment-form__btn-submit {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+}

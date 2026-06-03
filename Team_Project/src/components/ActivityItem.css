@@ -1,0 +1,111 @@
+/* 1. 전체 가로 행 (Row) 디자인 */
+.activity-item-row {
+    display: flex;
+    justify-content: space-between; /* 왼쪽(제목)과 오른쪽(메타)을 양끝으로 정렬 */
+    align-items: center;            /* 세로축 기준 가운데 정렬 */
+    padding: 14px 20px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e2e8f0; /* 아이템 사이의 구분선 */
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    min-width: 0; /* 자식 요소의 말줄임표(...) 작동을 위한 필수 속성 */
+}
+
+/* 마우스 올렸을 때 부드러운 강조 효과 */
+.activity-item-row:hover {
+    background-color: #f8fafc;
+    box-shadow: inset 3px 0 0 0 #002b49; /* 왼쪽에 포인트 컬러 바 생성 */
+}
+
+.activity-item-row:last-child {
+    border-bottom: none; /* 마지막 아이템은 구분선 제거 */
+}
+
+
+/* 2. 왼쪽 제목 영역 */
+.activity-item__title {
+    min-width: 0; /* flex 환경에서 글자 넘침 제어 */
+    flex-grow: 1; /* 남은 공간을 제목이 다 차지하도록 설정 */
+    padding-right: 20px;
+}
+
+/* 텍스트 링크 스타일 및 말줄임 처리 */
+.activity-item__title a {
+    font-size: 14px;
+    font-weight: 500;
+    color: #334155;
+    text-decoration: none;
+    transition: color 0.15s ease;
+    
+    /* 화면이 좁아지면 글자가 버튼을 침범하지 않고 자동으로 ... 처리됨 */
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* 행 전체에 호버했을 때 링크 텍스트 컬러 변경 */
+.activity-item-row:hover .activity-item__title a {
+    color: #002b49;
+}
+
+
+/* 3. 오른쪽 메타 박스 (날짜 + 버튼들) */
+.activity-item__meta-box {
+    display: flex;
+    align-items: center; /* 날짜와 버튼들의 높이 맞춤 */
+    gap: 16px;           /* 날짜와 버튼 묶음 사이의 간격 */
+    flex-shrink: 0;      /* 화면이 좁아져도 날짜나 버튼이 찌그러지지 않음 */
+}
+
+/* 날짜 스타일 */
+.activity-item__date {
+    font-size: 13px;
+    color: #94a3b8;
+    font-variant-numeric: tabular-nums;
+}
+
+
+/* 4. 버튼 그룹 및 개별 버튼 */
+.activity-item__actions {
+    display: flex;
+    gap: 6px; /* 수정 버튼과 삭제 버튼 사이 간격 */
+}
+
+.btn-activity-action {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    background: none;
+}
+
+/* 수정 버튼 - 소프트 네이비 톤 */
+.btn-activity-action--edit {
+    color: #475569;
+    background-color: #f1f5f9;
+}
+
+.btn-activity-action--edit:hover {
+    background-color: #002b49;
+    color: #ffffff;
+}
+
+/* 삭제 버튼 - 아웃라인 깔끔 폼에서 호버 시 레드 전환 */
+.btn-activity-action--delete {
+    color: #94a3b8;
+    border: 1px solid #e2e8f0;
+}
+
+.btn-activity-action--delete:hover {
+    background-color: #fef2f2;
+    border-color: #fee2e2;
+    color: #ef4444;
+}
+
+.activity-item__title{
+    padding: 8px 0; 
+}

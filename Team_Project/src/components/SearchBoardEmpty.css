@@ -1,0 +1,85 @@
+.content-empty{
+    flex-grow: 1;
+    width: 100%; 
+}
+
+.board-empty-wrapper {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 450px;
+    text-align: center;
+}
+
+.empty-message-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 420px;
+}
+
+.empty-message-box__icon {
+    width: 54px;
+    height: 54px;
+    margin-bottom: 20px;
+    opacity: 0.25;
+}
+
+.empty-message-box__title {
+    font-size: 18px;
+    color: #002b49;
+    font-weight: bold;
+    line-height: 1.5;
+    margin-bottom: 14px;
+}
+
+/* '텅..' 텍스트 크기 독립 분리 및 강조 */
+.emphasis-tung {
+    font-size: 26px; /* 기존 제목보다 확연히 눈에 띄게 키운 크기 */
+    display: inline-block;
+    margin-bottom: 4px;
+    color: #002b49;
+}
+
+/* ==========================================================================
+   MOBILE RESPONSIVE (768px 이하)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .board-empty-wrapper {
+        padding: 40px 16px;
+        min-height: 250px;
+    }
+
+    .emphasis-tung {
+        font-size: 20px;
+    }
+
+    .empty-message-box__title {
+        font-size: 15px;
+    }
+
+    .empty-message-box__icon {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .board-empty-wrapper {
+        padding: 30px 12px;
+        min-height: 200px;
+    }
+
+    .emphasis-tung {
+        font-size: 18px;
+    }
+
+    .empty-message-box__title {
+        font-size: 14px;
+    }
+}

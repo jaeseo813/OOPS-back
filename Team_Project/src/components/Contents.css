@@ -1,0 +1,35 @@
+.contents{
+    display: flex; 
+    align-items: flex-start;
+    gap: 30px; 
+    width: 100%; 
+    animation: fadeInUp 0.6s ease-in-out forwards; 
+    transition: transform 0.2s ease; 
+    cursor: pointer; 
+}
+
+.contents:hover{
+    transform: translateY(-4px); 
+}
+
+@keyframes fadeInUp {
+    from{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================================================
+   MOBILE RESPONSIVE (768px 이하)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .contents {
+        gap: 16px;
+    }
+}

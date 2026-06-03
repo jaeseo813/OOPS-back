@@ -1,0 +1,199 @@
+.comment-box {
+    background-color: #ffffff;
+    padding: 12px 14px;
+    border-bottom: 1px solid #ccd6dd;
+}
+
+.comment-box--reply {
+    background-color: #dbe4ec;
+    border-radius: 8px;
+    margin-left: 30px;
+    border: none; 
+}
+
+.comment-box__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.comment-box__user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    color: #777777;
+}
+
+.comment-box__author { font-weight: bold; color: #333333; }
+
+.comment-box__badge {
+    background-color: #002b49;
+    color: #ffffff;
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.comment-box__like-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: bold;
+    color: #004b7c;
+}
+
+.comment-mini-icon {
+    width: 12px;
+    height: 12px;
+    object-fit: contain;
+}
+
+.comment-box__actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.comment-capsule-btn {
+    background-color: #002b49;
+    padding: 4px 14px;
+    border-radius: 15px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    height: 24px;
+    cursor: pointer; 
+    transition: background 0.2s ease;
+}
+
+.comment-capsule-btn:hover { background-color: #004b7c; }
+
+.comment-capsule-btn__icon {
+    width: 12px;
+    height: 12px;
+    object-fit: contain;
+}
+
+.comment-capsule-btn__text {
+    font-size: 11px;
+    font-weight: bold;
+    color: #ffffff;
+
+}
+
+.comment-box__text {
+    font-size: 13px;
+    color: #333333;
+    padding-left: 2px;
+    white-space: pre-wrap;
+}
+
+
+.comment-box__btn-reply {
+    background-color: transparent;
+    color: #002b49;             
+    border: 1px solid #002b49;  
+    padding: 4px 12px;
+    border-radius: 15px;        
+    font-size: 11px;
+    font-weight: bold;
+    cursor: pointer;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+.comment-box__btn-reply:hover {
+    background-color: rgba(0, 43, 73, 0.06); 
+    border-color: #004b7c;
+    color: #004b7c;
+}
+
+.comment-box__btn-reply:active {
+    transform: scale(0.96);
+}
+
+/* ==========================================================================
+   좋아요 활성화 상태 (.comment-capsule-btn--active) - 톤업 버전
+   ========================================================================== */
+
+/* 💡 더 밝고 청량한 스카이 블루 계열로 색상 변경 */
+.comment-capsule-btn--active {
+    background-color: #3b82f6 !important; /* 화사하고 밝은 파란색 (토스/페이스북 느낌) */
+    border: 1px solid #60a5fa !important;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.35); /* 밝은 파란색에 맞춘 화사한 그림자 */
+    cursor: pointer;
+}
+
+/* 💡 활성화 시 내부 글자색을 깔끔한 하얀색으로 고정 */
+.comment-capsule-btn--active .comment-capsule-btn__text {
+    color: #ffffff !important;
+    font-weight: bold;
+}
+
+/* 💡 검은색 엄지척 아이콘을 하얀색으로 깔끔하게 반전 */
+.comment-capsule-btn--active .comment-capsule-btn__icon {
+    filter: brightness(0) invert(1);
+}
+
+/* 💡 활성화된 이후에는 마우스를 올려도 색이 변하지 않고 밝은 색 유지 */
+.comment-capsule-btn--active:hover {
+    background-color: #3b82f6 !important;
+}
+
+.comment-capsule-btn--active:active {
+    transform: none !important;
+}
+
+/* ==========================================================================
+   MOBILE RESPONSIVE (768px 이하)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .comment-box--reply {
+        margin-left: 15px;
+    }
+
+    .comment-box {
+        padding: 10px 12px;
+    }
+
+    .comment-box__header {
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    .comment-box__text {
+        font-size: 12px;
+    }
+
+    .comment-capsule-btn {
+        padding: 3px 10px;
+    }
+
+    .comment-box__btn-reply {
+        padding: 3px 10px;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .comment-box--reply {
+        margin-left: 10px;
+    }
+
+    .comment-box__user-info {
+        gap: 6px;
+        font-size: 11px;
+    }
+
+    .comment-box__actions {
+        gap: 5px;
+    }
+}

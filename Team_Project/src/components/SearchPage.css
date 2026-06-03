@@ -1,0 +1,239 @@
+.search-page{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 40px; 
+    padding: 40px; 
+    
+}
+
+a { text-decoration: none; color: inherit; }
+ul, li { list-style: none; }
+button { border: none; background: none; cursor: pointer; outline: none; }
+
+@keyframes fadeInUp{
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* CONTENT AREA (TABLE) */
+.content-area {
+    flex-grow: 1;
+}
+
+.board-table-wrapper {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 10px 20px 25px 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    animation: fadeInUp 0.56s ease-in;
+}
+
+.board-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.board-table th {
+    padding: 12px;
+    font-size: 13px;
+    color: #666666;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+
+.board-table td {
+    padding: 18px 12px;
+    font-size: 14px;
+    border-bottom: 1px solid #f4f7f9;
+    text-align: center;
+    color: #444444;
+}
+
+.board-table tr{
+    cursor: pointer; 
+}
+
+.board-table td.td-title {
+    text-align: left;
+    font-weight: 500;
+    color: #333333;
+    padding-left: 20px;
+}
+
+.board-table td.td-title a:hover {
+    text-decoration: underline;
+}
+
+.board-header-row{
+    border-bottom: 1px solid #002b49;
+    padding: 15px 0; 
+}
+
+.search-keyword {
+    color: #e03e2d;
+    font-weight: bold;
+}
+
+.search-count {
+    color: #002b49;
+    font-weight: bold;
+}
+
+/* SEARCH HIGHLIGHT */
+.highlight {
+    color: #e03e2d;
+    background-color: #fff2f2;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+/* PAGINATION: 원본 소스 복구 (동그라미 디자인 형태) */
+.pagination-box {
+    margin-top: auto;
+    padding-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.p-arrow {
+    background-color: #002b49;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.p-numbers {
+    display: flex;
+    gap: 8px;
+}
+
+.p-num {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #002b49;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.p-num.active {
+    background-color: #dbe4ec;
+    color: #333;
+}
+
+/* ==========================================================================
+   MOBILE RESPONSIVE (768px 이하)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .search-page {
+        padding: 16px;
+        gap: 20px;
+    }
+
+    .board-table-wrapper {
+        padding: 8px 12px 16px 12px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .board-table th {
+        padding: 8px 6px;
+        font-size: 11px;
+        white-space: nowrap;
+    }
+
+    .board-table td {
+        padding: 12px 6px;
+        font-size: 12px;
+        white-space: nowrap;
+    }
+
+    .board-table td.td-title {
+        padding-left: 8px;
+    }
+
+    .board-header-row {
+        padding: 12px 0;
+    }
+
+    .search-summary {
+        font-size: 13px;
+    }
+
+    .pagination-box {
+        padding-top: 20px;
+        gap: 8px;
+    }
+
+    .p-arrow {
+        padding: 5px 8px;
+        font-size: 11px;
+    }
+
+    .p-num {
+        width: 28px;
+        height: 28px;
+        font-size: 11px;
+    }
+
+    /* 모바일에서 검색 결과 테이블: 제목만 표시 */
+    .board-table .col-num,
+    .board-table .col-author,
+    .board-table .col-date,
+    .board-table .col-view,
+    .board-table .col-vote {
+        display: none;
+    }
+
+    .board-table td:nth-child(1),  /* 번호 */
+    .board-table td:nth-child(3),  /* 글쓴이 */
+    .board-table td:nth-child(4),  /* 등록일 */
+    .board-table td:nth-child(5),  /* 조회수 */
+    .board-table td:nth-child(6) { /* 추천 */
+        display: none;
+    }
+
+    .board-table td.td-title {
+        text-align: left;
+        font-weight: 500;
+        color: #333;
+        padding: 14px 4px;
+        width: 100%;
+    }
+
+    .board-table th.col-title {
+        text-align: left;
+        padding-left: 4px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .search-page {
+        padding: 12px;
+        gap: 16px;
+    }
+
+    .board-table-wrapper {
+        padding: 6px 8px 12px 8px;
+    }
+}
