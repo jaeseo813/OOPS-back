@@ -84,14 +84,11 @@ const PostDetail = () => {
     let nextBadCount = postData.badCount;
 
     if (isContainLike) {
-      // 좋아요 취소
       nextLikedPosts = loginUserInfo.likedPosts.filter((item) => item !== Number(postId));
       nextLikeCount = postData.likeCount - 1;
     } else {
-      // 좋아요 추가
       nextLikedPosts = [Number(postId), ...(loginUserInfo.likedPosts || [])];
       nextLikeCount = postData.likeCount + 1;
-      // 비추천이 있으면 비추천 취소
       if (isContainBad) {
         nextBadPosts = nextBadPosts.filter((item) => item !== Number(postId));
         nextBadCount = postData.badCount - 1;
@@ -117,7 +114,7 @@ const PostDetail = () => {
     }
   };
 
-  const onClickBad = () => {
+  const onClickBad = async () => {
     if (requireLogin()) return;
 
     const isContainLike = loginUserInfo.likedPosts?.includes(Number(postId));
@@ -129,14 +126,11 @@ const PostDetail = () => {
     let nextBadCount;
 
     if (isContainBad) {
-      // 비추천 취소
       nextBadPosts = loginUserInfo.badPosts.filter((item) => item !== Number(postId));
       nextBadCount = postData.badCount - 1;
     } else {
-      // 비추천 추가
       nextBadPosts = [Number(postId), ...(loginUserInfo.badPosts || [])];
       nextBadCount = postData.badCount + 1;
-      // 좋아요가 있으면 좋아요 취소
       if (isContainLike) {
         nextLikedPosts = nextLikedPosts.filter((item) => item !== Number(postId));
         nextLikeCount = postData.likeCount - 1;
@@ -150,6 +144,16 @@ const PostDetail = () => {
     onUpdateUserInfo(userInfo);
     const stored = getStoredUser();
     if (stored) setStoredUser({ ...stored, likedPosts: nextLikedPosts, badPosts: nextBadPosts });
+
+    try {
+      await postsApi.toggleBadPost(Number(postId));
+      onFetchPost(postId);
+    } catch (err) {
+      onUpdatePostLocal(postData);
+      onUpdateUserInfo(loginUserInfo);
+      if (stored) setStoredUser({ ...stored, likedPosts: loginUserInfo.likedPosts, badPosts: loginUserInfo.badPosts });
+      window.alert(err.message ?? "비추천 처리에 실패했습니다.");
+    }
   };
 
   return (

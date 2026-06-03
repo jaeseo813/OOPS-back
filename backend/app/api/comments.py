@@ -43,6 +43,7 @@ def delete_comment(
 ):
     return comment_service.delete_comment(db, post_id, comment_id, current_user.id)
 
+
 @router.post("/{post_id}/comments/{comment_id}/like")
 def like_comment(
     post_id: int,
@@ -51,13 +52,3 @@ def like_comment(
     current_user: User = Depends(get_current_user)
 ):
     return comment_service.like_comment(db, comment_id, current_user.id)
-
-
-@router.delete("/{post_id}/comments/{comment_id}/like")
-def unlike_comment(
-    post_id: int,
-    comment_id: int,
-    db: Session = Depends(get_db),
-    current_user: User = Depends(get_current_user)
-):
-    return comment_service.unlike_comment(db, comment_id, current_user.id)

@@ -50,3 +50,7 @@ export async function deletePost(postId) {
 export async function toggleLikePost(postId) {
   return apiRequest(`/posts/${postId}/like`, { method: "POST", auth: true });
 }
+
+export async function toggleBadPost(postId) {
+  return apiRequest(`/posts/${postId}/bad`, { method: "POST", auth: true });
+}

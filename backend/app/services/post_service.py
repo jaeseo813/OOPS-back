@@ -13,7 +13,7 @@ def make_post_response(post: Post) -> PostResponse:
         created_at=post.created_at,
         author_id=post.author_id,
         like_count=len(post.likes),
-        bad_count = post.bad_count,
+        bad_count=post.bad_count,
         comment_count=len(post.comments),
         category=post.category,
         view_count=post.view_count
@@ -43,7 +43,7 @@ def get_post(db: Session, post_id: int) -> PostResponse:
     post.view_count += 1
     db.commit()
     db.refresh(post)
-    return make_post_response(post) 
+    return make_post_response(post)
 
 
 def create_post(db: Session, post_data: PostCreate, author_id: int, category: str = "free") -> PostResponse:
@@ -107,29 +107,23 @@ def like_post(db: Session, post_id: int, user_id: int) -> dict:
         Like.user_id == user_id
     ).first()
     if existing_like:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail="이미 좋아요한 게시글입니다"
-        )
+        db.delete(existing_like)
+        db.commit()
+        return {"message": "좋아요 취소"}
+
+    # 비추천 있으면 자동 취소
+    existing_bad = db.query(Bad).filter(
+        Bad.post_id == post_id,
+        Bad.user_id == user_id
+    ).first()
+    if existing_bad:
+        db.delete(existing_bad)
+        post.bad_count -= 1
+
     like = Like(post_id=post_id, user_id=user_id)
     db.add(like)
     db.commit()
     return {"message": "좋아요 완료"}
-
-
-def unlike_post(db: Session, post_id: int, user_id: int) -> dict:
-    like = db.query(Like).filter(
-        Like.post_id == post_id,
-        Like.user_id == user_id
-    ).first()
-    if not like:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail="좋아요하지 않은 게시글입니다"
-        )
-    db.delete(like)
-    db.commit()
-    return {"message": "좋아요 취소"}
 
 
 def bad_post(db: Session, post_id: int, user_id: int) -> dict:
@@ -144,32 +138,24 @@ def bad_post(db: Session, post_id: int, user_id: int) -> dict:
         Bad.user_id == user_id
     ).first()
     if existing_bad:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail="이미 비추천한 게시글입니다"
-        )
+        db.delete(existing_bad)
+        post.bad_count -= 1
+        db.commit()
+        return {"message": "비추천 취소"}
+
+    # 좋아요 있으면 자동 취소
+    existing_like = db.query(Like).filter(
+        Like.post_id == post_id,
+        Like.user_id == user_id
+    ).first()
+    if existing_like:
+        db.delete(existing_like)
+
     bad = Bad(post_id=post_id, user_id=user_id)
     db.add(bad)
     post.bad_count += 1
     db.commit()
     return {"message": "비추천 완료"}
-
-
-def unbad_post(db: Session, post_id: int, user_id: int) -> dict:
-    bad = db.query(Bad).filter(
-        Bad.post_id == post_id,
-        Bad.user_id == user_id
-    ).first()
-    if not bad:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail="비추천하지 않은 게시글입니다"
-        )
-    db.delete(bad)
-    post = db.query(Post).filter(Post.id == post_id).first()
-    post.bad_count -= 1
-    db.commit()
-    return {"message": "비추천 취소"}
 
 
 def search_posts(db: Session, keyword: str) -> list[PostResponse]:

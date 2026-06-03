@@ -99,26 +99,10 @@ def like_comment(db: Session, comment_id: int, user_id: int) -> dict:
         CommentLike.user_id == user_id
     ).first()
     if existing_like:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail="이미 좋아요한 댓글입니다"
-        )
+        db.delete(existing_like)
+        db.commit()
+        return {"message": "좋아요 취소"}
     like = CommentLike(comment_id=comment_id, user_id=user_id)
     db.add(like)
     db.commit()
     return {"message": "좋아요 완료"}
-
-
-def unlike_comment(db: Session, comment_id: int, user_id: int) -> dict:
-    like = db.query(CommentLike).filter(
-        CommentLike.comment_id == comment_id,
-        CommentLike.user_id == user_id
-    ).first()
-    if not like:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail="좋아요하지 않은 댓글입니다"
-        )
-    db.delete(like)
-    db.commit()
-    return {"message": "좋아요 취소"}

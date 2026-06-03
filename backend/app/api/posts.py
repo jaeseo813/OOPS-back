@@ -67,14 +67,6 @@ def like_post(
     return post_service.like_post(db, post_id, current_user.id)
 
 
-@router.delete("/{post_id}/like")
-def unlike_post(
-    post_id: int,
-    db: Session = Depends(get_db),
-    current_user: User = Depends(get_current_user)
-):
-    return post_service.unlike_post(db, post_id, current_user.id)
-
 @router.post("/{post_id}/bad")
 def bad_post(
     post_id: int,
@@ -83,14 +75,6 @@ def bad_post(
 ):
     return post_service.bad_post(db, post_id, current_user.id)
 
-
-@router.delete("/{post_id}/bad")
-def unbad_post(
-    post_id: int,
-    db: Session = Depends(get_db),
-    current_user: User = Depends(get_current_user)
-):
-    return post_service.unbad_post(db, post_id, current_user.id)
 
 @router.post("/notice", response_model=PostResponse, status_code=201)
 def create_notice(

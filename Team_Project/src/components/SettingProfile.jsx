@@ -1,5 +1,5 @@
 import man from "../assets/man_profile.png";
-import { useState, useRef, useContext } from "react";
+import { useState, useRef, useContext, useEffect } from "react";
 import { UserDataContext, UserDispatchContext } from "../util/context";
 import { useParams } from "react-router-dom";
 import { getStoredUser, setStoredUser } from "../api/authStorage";
@@ -13,7 +13,13 @@ const SettingProfile = () => {
         return user.userName === userId;
     });
     const [profileChange, setProfileChange] = useState(false);
-    const [previewImg, setPreviewImg] = useState(currentUser?.profileImg || man);
+    const [previewImg, setPreviewImg] = useState(man);
+
+    useEffect(() => {
+        if (currentUser?.profileImg) {
+            setPreviewImg(currentUser.profileImg);
+        }
+    }, [currentUser]);
 
     const fileInputRef = useRef(null);
 

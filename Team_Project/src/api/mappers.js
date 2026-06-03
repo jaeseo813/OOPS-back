@@ -20,7 +20,7 @@ export function postFromApi(post) {
     authorId: post.author_id,
     viewCount: post.view_count ?? 0,
     likeCount: post.like_count ?? 0,
-    badCount: 0,
+    badCount: post.bad_count ?? 0,
     commentCount: post.comment_count ?? 0,
     category: categoryFromApi(post.category),
   };

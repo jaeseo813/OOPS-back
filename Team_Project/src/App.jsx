@@ -113,9 +113,10 @@ function App() {
 
     fetchMe()
       .then((user) => {
+        console.log("fetchMe 결과:", user);
         dispatchUser({ type: "UPSERT", userData: user });
         const stored = getStoredUser();
-        if (stored) setStoredUser({ ...stored, likedPosts: user.likedPosts, likedComments: user.likedComments });
+        if (stored) setStoredUser({ ...stored, profileImg: user.profileImg, likedPosts: user.likedPosts, likedComments: user.likedComments });
       })
       .catch((err) => {
         console.error("로그인 세션 복원 실패:", err);
